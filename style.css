@@ -1,0 +1,109 @@
+/* Background GIF */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  background: url('beaa776788318ffa9adf475282e18bb5.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Container for animations */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Neon text animations */
+.neon-text {
+  font-size: 3em;
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #00f;
+  animation: flicker 2s infinite alternate, slideDown 1s ease forwards;
+}
+
+.neon-subtext {
+  font-size: 1.5em;
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  animation: slideUp 1.5s ease forwards;
+}
+
+/* Buttons Neon UI */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 250px;
+}
+
+.neon-btn {
+  text-decoration: none;
+  color: #0ff;
+  font-size: 1.1em;
+  padding: 12px;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  box-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #00f;
+  transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+  color: #fff;
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 30px #00f,
+    0 0 60px #0ff;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #00f;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.8;
+    text-shadow: none;
+  }
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
